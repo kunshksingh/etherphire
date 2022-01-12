@@ -6,15 +6,14 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
     </style>
-    <title>{{ poemName }}</title>
+    <title>{{ month }} / {{day}} / {{year}} </title>
     <link rel="stylesheet" href="{% static 'phire.css'%}" />
 </head>
 <body style = "background-color: black;">
-
     <a href = javascript:history.back()><img class = "headlink antiFade" src = "https://cdn-icons-png.flaticon.com/512/60/60577.png" style = "margin-right:-5vw; left: -5vw; filter:invert(30%) sepia(90%) hue-rotate(320deg) saturate(6) brightness(40%); height:5%;width:5%;"></a>
-<h1>{{ poemName }}</h1>
+<h1>{{ month }} / {{day}} / {{year}} </h1>
 
-<p style = " white-space:pre; margin-left:2vw;">{{ poemText }}</p>
+<p style = " white-space:pre; margin-left:2vw;">{{ text }}</p>
 
 
 </body>

@@ -4,10 +4,20 @@ html{
 }
 body
 {
-    background-color:black!important;
     right:0;
     width:auto;
     margin-right:auto;
+    overflow:none;
+    display: flex;
+    flex-direction: column;
+}
+body > * 
+{
+    flex-grow: 0;
+}
+body > nav + .container 
+{
+    flex-grow: 1;
 }
 .select div{
     max-width: 200px;
@@ -22,12 +32,12 @@ header{
 	width: auto!important;
 	height: 25vh!important;
     border-color:black;
-    justify-content:space-between;
+    justify-content:center;
     align-items: center;
-    padding:1em 10%;
     outline-style:ridge;
     outline-color:rgba(0, 0, 0, 0.5)!important;
     filter: brightness(150%);
+    
 }
 .card a:hover{
     text-decoration:underline!important;
@@ -40,7 +50,8 @@ header{
 footer
 {
     margin-top: 10px;
-    height:5vw;
+    height:10vw;
+    min-height: 5vw;
     width:auto;
     height:auto;
     text-align: flex;
@@ -93,7 +104,7 @@ p{
     align-content:space-between;
     margin: 1ch;
     margin-left: 1ch;
-    color: rgb(75, 11, 19);
+    color: rgb(99, 20, 19);
     display:inline-block;
     font-family: 'Optima';
     font-size: 2vw;
@@ -144,8 +155,9 @@ p{
 .sticky{
     position: -webkit-sticky;
     position: sticky;
-    top: 50px;
+    top: 2vh;
     margin:0!important;
+    display: flex;
 }
 
 .etherphireMain{
@@ -190,10 +202,8 @@ p{
 
     mix-blend-mode: multiply;
     filter: brightness(120%);
-    margin-left:20vw;
-    margin-right:20vw;
     margin-top:10vh;
-    margin-bottom:10vh;
+    
 
 }
 .pulseCutoff
@@ -247,9 +257,10 @@ p{
         hsla(0, 62%, 5%, 0.738)  90%,
         hsla(0, 89%, 2%, 0.801) 98%,
         hsla(0, 0%, 0%, 0.74) 100%
-      );
+      )!important;
+      
     background-color: rgb(46, 4, 9);
-    mix-blend-mode:luminosity;
+    filter:grayscale();
 
 }
 .faded{
@@ -283,6 +294,7 @@ p{
     box-sizing: border-box;
     margin-right: -15vw;
 }
+
 .tags
 {
     padding:0.25vh;
@@ -306,11 +318,13 @@ p{
     min-width: auto;
     width:auto;
     position: relative;
-    height: 18vh;
+    min-height: 2vh;
+    height:auto;
     margin-top: 2vh;
     margin-right:auto;
     margin-left:-25vw;
     filter: brightness(150%);
+    vertical-align:center;
 }
 
 .antiFade{
@@ -356,14 +370,14 @@ p{
     text-align:justify;
     font-family: 'Quicksand', sans-serif;
     color:white;
-    font-size: 1em;
+    font-size: 1.8em;
     mix-blend-mode: difference;
     margin-left: 5vw;
     margin-right: 5vw;
     margin-top: 8vh;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     word-spacing: 4px;
-    line-height: 6vh;
+    line-height: 8vh;
 
 }
 .select{
@@ -404,7 +418,7 @@ p{
 .subHead{
     width: 100%;
     align-content:space-between;
-    color: rgb(75, 11, 19);
+    color: rgb(119, 24, 35);
     display:flex;
     justify-content: center;
     font-family: 'Optima';

@@ -9,16 +9,18 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
     </style>
+
+
      <script type = "text/javascript" src = "{% static 'filter.js'%}">
     </script>
 </head>
-<body>
+<body style = "background-color:rgb(29, 11, 13)!important;">
     <header>
         
         <div class = "sticky">
             <li class = "box"><a class = "headlink" href="/poetry/" style = "text-decoration:underline" data-slug="poetry">All Poetry</a></li>
             <li class = "box"><a class = "headlink" href="/blog/" data-slug="blog">Blog</a></li>
-            <li class = "box"><a class = "headlink" href="/automation/" data-slug="automation">Automatic Poet</a></li>
+            <li class = "box"><a class = "headlink" href="/automation/" data-slug="automation">Automatic</a></li>
             <li class = "box"><a class = "headlink" href="https://github.com/kunshksingh/etherphire" data-slug="github">Github</a></li> 
         </div>
     </header>
@@ -27,7 +29,10 @@
         <form role = "form" style = "margin-top:3vh">
             <fieldset>
                 <div class="form-group">
-                    <input onkeyup="poemFilter()" style = "margin:auto; display:block; width: 20vw" class="form-control" placeholder="filter" name="filter" id = "filter" type="text" >
+                    <input onkeyup="poemFilter()" style = "margin:auto; display:block; width: 50vw; height:auto" class="form-control" placeholder="filter" name="filter" id = "filter" type="text" >
+                    <script type="text/javascript">
+                        window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){e.preventDefault();return false;}}},true);
+                    </script>
                 </div>
             </fieldset>
         </form>
@@ -81,9 +86,10 @@
                     -->
                 </div>
             </div>
+            <hr style = "background:white; margin-bottom: -1.35vh;">
         </div>
-
-        <hr style = "background:white">
+        
+        
       
         {% endfor %}
        

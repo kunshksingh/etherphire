@@ -13,4 +13,12 @@ class Poems(models.Model):
     def __str__ (self):
         return self.poem_name
     
+class Blog(models.Model):
+    title = models.CharField(max_length = 64)
+    text = models.CharField(max_length = 8192)
+    year = models.IntegerField()
+    month = models.IntegerField()
+    day = models.IntegerField()
+
+    
     

@@ -59,7 +59,13 @@ def poem(request, poemname):
             return render(request, 'poem.html', {
 'poemName': object.poem_name,'poemText': object.poem, 'tags':object.tags
     })
-    return render(request, 'nonePage.html')
+    return nonePage(request)
+def nonePage(request):
+    return request, 'nonePage.html'
+def article(request, month, day, year):
+    items = Blog.objects.all()
 
-
-
+    for object in items:
+        if (object.day == day and object.month == month and object.year == year):
+            return render(request, 'article.html', {'day': object.day, 'month': object.month, 'year': object.year, 'text':object.text})
+    return nonePage(request)
