@@ -180,7 +180,7 @@ p{
     padding: 13vh;
     width: 84.5vw;
     word-spacing: 10px;
-    letter-spacing: 10px;
+    letter-spacing: 0.76vw;
     font-size:5vw;
     position: relative;
     text-align:center;
@@ -248,7 +248,7 @@ p{
 .description{
     color:thistle;
     text-align:center;
-    font-size:24;
+    font-size:1vw;
     font-family:'Verdana';
     
 
