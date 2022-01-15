@@ -9,7 +9,7 @@ urlpatterns = [
     path('poetry/preface/', views.preface, name = 'preface'),
     path('poetry/<str:poemname>/', views.poem, name='poem'),
     path('blog/', views.blog, name = 'blog'),
-    path('blog/<int:month>/<int:day>/<int:year>', views.article, name = 'article'),
+    #path('blog/<int:month>/<int:day>/<int:year>', views.article, name = 'article'),
     path('automation/', views.automation, name = 'automation'),
    
     

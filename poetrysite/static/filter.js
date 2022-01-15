@@ -24,15 +24,15 @@ function poemFilter() {
     console.log(numHidden);
     if (numHidden == maxHidden-2)
     {
-        footer.style.marginTop = "5vh";
+        footer.style.marginTop = "8vh";
     }
     else if (numHidden == maxHidden-1)
     {
-        footer.style.marginTop = "25vh";
+        footer.style.marginTop = "27.1vh";
     }
     else if (numHidden == maxHidden)
     {
-        footer.style.marginTop = "45vh";
+        footer.style.marginTop = "46.3vh";
     }
     else
     {

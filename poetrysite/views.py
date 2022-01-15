@@ -43,9 +43,18 @@ def preface(request):
     return render(request, 'preface.html')
 
 def blog(request):
-    return render(request, 'blog.html')
+    items = Blog.objects.all()
+    
+    objects = []
+
+    for post in reversed(items):
+        objects.append({'day':post.day, 'month':post.month, 'year':post.year, 'text':post.text})
+
+    return render(request, 'blog.html', {'objects':objects})
+
 def automation(request):
     return render(request, 'automaticPoet.html')
+
 def poem(request, poemname):
     if (poemname == "scrapped"):
         return allPoetry(request, True)
@@ -61,7 +70,8 @@ def poem(request, poemname):
     })
     return nonePage(request)
 def nonePage(request):
-    return request, 'nonePage.html'
+    return render(request, 'nonePage.html')
+'''
 def article(request, month, day, year):
     items = Blog.objects.all()
 
@@ -69,3 +79,4 @@ def article(request, month, day, year):
         if (object.day == day and object.month == month and object.year == year):
             return render(request, 'article.html', {'day': object.day, 'month': object.month, 'year': object.year, 'text':object.text})
     return nonePage(request)
+'''
