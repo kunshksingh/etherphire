@@ -112,7 +112,8 @@ p{
     color: rgb(99, 20, 19);
     display:inline-block;
     font-family: 'Optima';
-    font-size: 2vw;
+
+    font-size: 28px;
     text-decoration:none;
 }
 
@@ -166,6 +167,7 @@ p{
 }
 
 .etherphireMain{
+    z-index:auto;
     background-color: hsla(0, 91%, 8%, 0.747);
     background: linear-gradient(
         hsla(0, 87%, 11%, 0.849) 0%,
@@ -173,20 +175,20 @@ p{
         hsla(0, 78%, 7%, 0.801) 15%,
         hsla(0, 62%, 3%, 0.738)  25%,
         hsla(0, 89%, 1%, 0.801) 35%,
-        hsla(0, 3%, 6%, 0.74) 100%
+        hsla(0, 3%, 6%, 0.74) 83%,
+        hsla(0, 0%, 0%, 0.74) 100%
       );
     mix-blend-mode:normal;
-    color:white;
+    color:#79112d;
     padding: 13vh;
-    width: 84.5vw;
     word-spacing: 10px;
     letter-spacing: 0.76vw;
-    font-size:5vw;
+    font-size:72px;
     position: relative;
     text-align:center;
     font-family:'Optima', 'Times';
-    text-shadow: -10px 3vh 7px rgba(255,255,255,0.8),
-                   5px 4.8vh 7px rgba(255,255,255,0.3);
+    text-shadow: -10px 3vh 7px rgba(107,6,33,0.8),
+                   5px 4.8vh 7px rgba(107,6,33,0.3);
 
 }
 .etherphireMain:before{
@@ -196,30 +198,17 @@ p{
     filter:blur(0.015em);
     mix-blend-mode:difference;
 }
-.etherphireGradient
-{
-    position:absolute;
-    background: radial-gradient(ellipse farthest-corner at center center, #802134 42%, #6b0621 61%);
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    mix-blend-mode: multiply;
-    filter: brightness(120%);
-    margin-top:10vh;
-    
 
-}
 .pulseCutoff
 {
-    z-index:1;
+    z-index:3;
 }
 .etherphirePulse
 {
-    z-index: 2;
+    z-index:0;
     position:absolute;
     top:13vh;
-    bottom:8vh;
+    bottom:10vh;
     right:0;
     left:-35vw;
     overflow:hidden;
@@ -228,29 +217,43 @@ p{
             circle, 
              white,
             transparent 10%
-        ) left / 50% 25%;
-        animation: etherphirePulse 10s ease-out infinite;
-        mix-blend-mode: overlay;
-    resize: none;
+        ) right / 50% 25%;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-timing-function: ease-in-out;
+        animation: etherphirePulse 10s ease-in-out infinite;
+        mix-blend-mode:overlay;
+    
 
 }
 
 @keyframes etherphirePulse{
-    from{
-        opacity:0.7;
-        transform: translate(-30%);
+    0%{
+        opacity:0;
+        transform: translate(-27%);
+        filter: blur(0.015em);
     }
-	to{
+    15%{
+        opacity:0.7;
+        transform: translate(-26%);
+        filter:blur(0.008em);
+    }
+	95%{
         opacity:1;
         transform: translate(0%);
+        filter:blur(0.005em);
+    }
+    100%{
+        opacity:0.0;
+        transform: translate(0%);
+        filter:blur(0.000em);
     }
 }
 .description{
     color:thistle;
     text-align:center;
-    font-size:1vw;
+    font-size:20px;
     font-family:'Verdana';
-    
+    letter-spacing: 1.9px;
 
 }
 .fadeddata{
